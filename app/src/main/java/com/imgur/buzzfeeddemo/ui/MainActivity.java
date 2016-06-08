@@ -143,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements SwipeRefreshLayou
     public View.OnClickListener onItemClick(GalleryItem item) {
         return v -> {
             bottomSheetBinding.setVariable(BR.galleryItem, item);
-            bottomSheetBinding.invalidateAll();
+            bottomSheetBinding.notifyPropertyChanged(BR.galleryItem);
             ImageView itemImage = (ImageView) bottomSheetBinding.getRoot().findViewById(R.id.item_img);
             itemImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
             scrollBottomSheetUp();
